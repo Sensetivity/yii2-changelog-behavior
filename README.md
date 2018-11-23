@@ -74,7 +74,7 @@ class Post extends yii\db\ActiveRecord {
 ```
 View *post/view.php*
 ```php
-use cranky4\ChangeLogBahavior\ListWidget;
+use Sensetivity\ChangeLog\ChangeLogListWidget;
 use app\models\Post;
 
 /**
@@ -91,7 +91,7 @@ echo DetailView::widget([
     ],
 ]);
 
-echo Sensetivity\ChangeLog\ChangeLogListWidget::widget([
+echo ChangeLogListWidget::widget([
     'model' => $model,
 ]);
 
