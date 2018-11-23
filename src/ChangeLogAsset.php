@@ -7,14 +7,11 @@ use yii\web\AssetBundle;
 
 class ChangeLogAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-
-    public $baseUrl = '@web';
+    public $sourcePath = '@vendor/sensetivity/yii2-changelog-behavior/src/assets';
 
     public $css = [
         'css/style.css',
     ];
-
 
     public $depends = [
         'yii\web\YiiAsset',
@@ -22,10 +19,4 @@ class ChangeLogAsset extends AssetBundle
         'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
     ];
-
-    public function init()
-    {
-        $this->sourcePath  = (__DIR__ . '/assets');
-        parent::init();
-    }
 }

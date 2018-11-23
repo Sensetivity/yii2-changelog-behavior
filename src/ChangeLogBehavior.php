@@ -3,7 +3,7 @@
 namespace Sensetivity\ChangeLog;
 
 
-use cranky4\changeLogBehavior\LogItem;
+use Sensetivity\ChangeLog\LogItem;
 use yii\base\Behavior;
 use yii\base\Event;
 use yii\db\ActiveRecord;

@@ -2,7 +2,7 @@
 
 namespace Sensetivity\ChangeLog;
 
-use cranky4\changeLogBehavior\helpers\CompositeRelationHelper;
+use Sensetivity\ChangeLog\helpers\CompositeRelationHelper;
 use yii\behaviors\TimestampBehavior;
 use yii\console\Application;
 use yii\db\ActiveRecord;
