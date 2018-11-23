@@ -1,0 +1,22 @@
+{
+    "name": "sensetivity/yii2-changelog-behavior",
+    "description": "Simple changelog behavior with diff highlight for yii2 models",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "extension", "widget", "plugin"],
+    "require": {
+        "yiisoft/yii2": "^2.0",
+        "qazd/text-diff": "^0.1.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mykola Pukhalskyi",
+            "email": "notfound.la2.asterios.tm@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Sensetivity\\ChangeLog\\": "src"
+      }
+    }
+}
