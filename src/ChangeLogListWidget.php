@@ -32,7 +32,14 @@ class ChangeLogListWidget extends Widget
     {
         $objectType = CompositeRelationHelper::resolveObjectType($this->model);
         $dataProvider = $this->getEventProvider($objectType, $this->model->primaryKey);
+        $this->registerCss();
+
         return $this->renderProvider($dataProvider);
+    }
+
+    protected function registerCss()
+    {
+        $this->view->registerAssetBundle(ChangeLogAsset::class);
     }
 
     /**
