@@ -94,5 +94,30 @@ echo DetailView::widget([
 echo ChangeLogListWidget::widget([
     'model' => $model,
 ]);
+```
 
+#### History
+
+Controller *PostController*
+```php
+use Sensetivity\ChangeLog\actions\ChangeLogAction;
+use app\models\Post;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function actions()
+    {
+        return [
+            'changelog' => [
+                'class' => ChangeLogAction::class,
+                'modelClass' => Page::class,
+            ],
+        ];
+    }
+
+```
+View *post/view.php*
+```php
+<?= Html::a('Changelog', ['changelog', 'id' => $model->id], ['class' => 'btn btn-warning']) ?>
 ```
