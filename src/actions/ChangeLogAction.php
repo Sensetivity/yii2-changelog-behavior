@@ -15,7 +15,7 @@ class ChangeLogAction extends Action
      * That means, if you name the action as "error" in "SiteController", then the view name
      * would be "error", and the corresponding view file would be "views/site/error.php".
      */
-    public $view = '@vendor/sensetivity/yii2-changelog-behavior/views/changelog';
+    public $view = '@vendor/sensetivity/yii2-changelog-behavior/src/views/changelog';
 
     /**
      * @var string|false|null the name of the layout to be applied to this error action view.
