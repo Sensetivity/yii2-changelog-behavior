@@ -79,20 +79,36 @@ class ChangeLogBehavior extends Behavior
     }
 
     /**
-     * @param $data
-     * @param $type
+     * @param array|string $oldData
+     * @param array|string $newData
+     * @param null $type
      */
-    public function addCustomLog($data, $type = null)
+    public function addCustomLog($oldData, $newData, $type = null)
     {
-        if (!is_array($data)) {
-            $data = [$data];
-        }
+        $oldData = (array)$oldData;
+        $newData = (array)$newData;
 
         $logEvent = new LogItem();
         $logEvent->relatedObject = $this->owner;
-        $logEvent->old_data = null;
-        $logEvent->new_data = $data;
+        $logEvent->old_data = $oldData;
+        $logEvent->new_data = $newData;
         $logEvent->type = $type;
+        $logEvent->save();
+    }
+
+
+    /**
+     * @param array|string $oldData
+     * @param array|string $newData
+     * @param null $type
+     */
+    public function revert($oldData, $newData, $type = null)
+    {
+        $logEvent = new LogItem();
+        $logEvent->relatedObject = $this->owner;
+        $logEvent->old_data = $oldData;
+        $logEvent->new_data = $newData;
+        $logEvent->type = 'reverted';
         $logEvent->save();
     }
 

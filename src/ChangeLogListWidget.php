@@ -6,8 +6,10 @@ namespace Sensetivity\ChangeLog;
 use Sensetivity\ChangeLog\helpers\CompositeRelationHelper;
 use yii\base\Widget;
 use Qazd\TextDiff;
+use yii\bootstrap\Html;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
+use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\helpers\Inflector;
 use yii\helpers\Json;
@@ -69,6 +71,28 @@ class ChangeLogListWidget extends Widget
                 ],
                 'userId',
                 'hostname',
+//                [
+//                    'class' => ActionColumn::class,
+//                    'header' => \Yii::t('app', 'Actions'),
+//                    'template' => '{revert}',
+//                    'buttons' => [
+//                        'revert' => function ($url, $model, $key) {
+//                            $options = [
+//                                'title' => 'Revert model',
+//                                'aria-label' => 'Revert model',
+//                                'data-pjax' => '0',
+//                            ];
+//                            $icon = Html::tag('span', '', ['class' => "glyphicon glyphicon-repeat"]);
+//
+//                            return Html::a($icon, $url, $options);
+//                        },
+//                    ],
+//                    'visibleButtons' => [
+//                        'delete' => false,
+//                        'view' => false,
+//                        'update' => false,
+//                    ],
+//                ],
             ],
         ]);
     }
